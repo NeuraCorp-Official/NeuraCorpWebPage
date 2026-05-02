@@ -1,0 +1,37 @@
+#backend
+/backend/node_modules/
+
+# Variáveis secretas
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build
+dist/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Arquivos temporários
+*.tmp
+*.cache
+
+# Banco local
+*.sqlite
+*.db
+
+# Uploads temporários
+uploads/
+
+# Testes
+coverage/
