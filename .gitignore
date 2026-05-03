@@ -1,6 +1,9 @@
 #backend
-/backend/node_modules/
-
+/dependencias/node_modules/
+dependencias.json
+package-lock.json
+package.json
+dependencias.json
 # Variáveis secretas
 .env
 .env.local
