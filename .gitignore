@@ -1,9 +1,5 @@
 #backend
-backend/
 node_modules/
-dependencias.json
-package-lock.json
-package.json
 dependencias.json
 .vscode/
 
