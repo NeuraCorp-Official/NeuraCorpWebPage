@@ -1,5 +1,6 @@
 #backend
-/dependencias/node_modules/
+/dependencias
+node_modules/
 dependencias.json
 package-lock.json
 package.json
