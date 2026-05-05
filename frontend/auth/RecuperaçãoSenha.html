@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuraCorp — Recuperar Senha</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="auth-card">
+
+  <div class="brand">
+    <div class="brand-icon">⬡</div>
+    <div class="brand-name">Neura<span>Corp</span></div>
+    <div class="brand-tag">Plataforma Corporativa</div>
+  </div>
+
+  <h1 class="auth-title">Recuperar senha</h1>
+  <p class="auth-subtitle">Digite seu email e enviaremos as instruções de recuperação.</p>
+
+  <div class="alert alert-error" id="alertError">
+    <span>⚠</span>
+    <span id="alertMsg"></span>
+  </div>
+
+  <div class="alert alert-success" id="alertSuccess">
+    <span>✓</span>
+    <span>Se o email existir, enviaremos as instruções em breve.</span>
+  </div>
+
+  <form id="recuperarForm">
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <div class="input-wrap">
+        <input type="email" id="email" placeholder="seu@email.com"
+               required autocomplete="email">
+        <span class="icon">✉</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-primary" id="btnRecuperar">
+      Enviar instruções
+    </button>
+
+  </form>
+
+  <div class="auth-links">
+    Lembrou a senha? <a href="Login.html">Voltar ao login</a>
+  </div>
+
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
