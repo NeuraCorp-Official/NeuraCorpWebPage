@@ -88,7 +88,12 @@ async function handleLogin(e) {
       body:    JSON.stringify({ email, senha })
     });
 
-    const data = await res.json();
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      data = {};
+    }
 
     if (!res.ok) {
       showAlert('error', data.erro || 'Email ou senha incorretos.');
@@ -142,7 +147,7 @@ async function handleCadastro(e) {
     localStorage.setItem('nc_user',  JSON.stringify(data.usuario));
 
     showAlert('success');
-    setTimeout(() => window.location.href = '../NeuraCorp.html', 1500);
+    setTimeout(() => window.location.href = '/NeuraCorp.html', 1500);
 
   } catch {
     showAlert('error', 'Erro de conexão. Tente novamente.');
