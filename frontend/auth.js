@@ -147,7 +147,7 @@ async function handleCadastro(e) {
     localStorage.setItem('nc_user',  JSON.stringify(data.usuario));
 
     showAlert('success');
-    setTimeout(() => window.location.href = '/NeuraCorp.html', 1500);
+    setTimeout(() => window.location.href = 'NeuraCorp.html', 1500);
 
   } catch {
     showAlert('error', 'Erro de conexão. Tente novamente.');
