@@ -5,62 +5,177 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/nclogo.png">
 </head>
+
 <body>
+
+<!-- Layout principal -->
 <div class="layout">
+
+  <!-- Barra lateral -->
   <aside class="sidebar">
+
+    <!-- Marca e Navegação -->
     <div class="sidebar-brand">
       <img src="assets/imgs/nclogo.png" alt="NeuraCorp" class="brand-icon">
       <div class="brand-name">Neura<span>Corp</span></div>
       <div class="brand-tag">Inovação & Tecnologia</div>
     </div>
+
+    <!-- Campo de busca -->
     <div class="sidebar-search">
       <span class="search-icon">⌕</span>
       <input type="text" placeholder="Pesquisar...">
     </div>
+
+    <!-- Rótulo de navegação -->
     <div class="nav-label">Navegação</div>
+
+    <!-- Menu de navegação -->
     <nav>
       <ul class="menu">
-        <li><a href="index.html"><button class="nav-btn"><span class="nav-icon">⌂</span> Home</button></a></li>
-        <li><a href="neurahub.html"><button class="nav-btn active"><span class="nav-icon">◈</span> NeuraHub</button></a></li>
-        <li><a href="neuralab.html"><button class="nav-btn"><span class="nav-icon">⚗</span> NeuraLab</button></a></li>
-        <li><a href="neurashop.html"><button class="nav-btn"><span class="nav-icon">◻</span> NeuraShop</button></a></li>
-        <li><a href="projetos.html"><button class="nav-btn"><span class="nav-icon">◧</span> Projetos</button></a></li>
-        <li><a href="parcerias.html"><button class="nav-btn"><span class="nav-icon">⬡</span> Parcerias</button></a></li>
+
+        <li>
+          <a href="index.html" class="btn-sound">
+            <button class="nav-btn">
+              <span class="nav-icon">⌂</span> Home
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="neurahub.html" class="btn-sound">
+            <button class="nav-btn active">
+              <span class="nav-icon">◈</span> NeuraHub
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="neuralab.html" class="btn-sound">
+            <button class="nav-btn">
+              <span class="nav-icon">⚗</span> NeuraLab
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="neurashop.html" class="btn-sound">
+            <button class="nav-btn">
+              <span class="nav-icon">◻</span> NeuraShop
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="projetos.html" class="btn-sound">
+            <button class="nav-btn">
+              <span class="nav-icon">◧</span> Projetos
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="parcerias.html" class="btn-sound">
+            <button class="nav-btn">
+              <span class="nav-icon">⬡</span> Parcerias
+            </button>
+          </a>
+        </li>
+
       </ul>
     </nav>
+
+    <!-- Rodapé da barra lateral -->
     <div class="sidebar-footer">
-      <div class="status-badge"><div class="status-dot"></div>Sistemas operacionais</div>
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        Sistemas operacionais
+      </div>
     </div>
+
   </aside>
+
+  <!-- Conteúdo principal -->
   <main class="main-content">
+
+    <!-- Barra superior -->
     <div class="topbar">
+
       <span class="tag tag-cyan">Centro de Integração</span>
-      <div id="authArea" style="display:flex;align-items:center;gap:10px;position:relative;"></div>
+
+      <!-- Login / Cadastro -->
+      <div 
+        id="authArea" 
+        class="btn-sound"
+        style="display:flex;align-items:center;gap:10px;position:relative;">
+      </div>
+
     </div>
+
+    <!-- Cabeçalho da página -->
     <div class="page-header">
+
       <div class="header-left">
         <div class="page-eyebrow">NeuraHub · Módulo Central</div>
-        <h1 class="page-title">Neura<span>Hub</span></h1>
-        <p class="page-subtitle">Centro de inovação e integração da NeuraCorp.</p>
+
+        <h1 class="page-title">
+          Neura<span>Hub</span>
+        </h1>
+
+        <p class="page-subtitle">
+          Centro de inovação e integração da NeuraCorp.
+        </p>
       </div>
+
       <div class="header-right">
-        <button class="btn btn-ghost" data-protected>📊 Monitorar</button>
-        <button class="btn btn-primary" data-protected>⚡ Conectar</button>
+
+        <button class="btn btn-ghost btn-sound" data-protected>
+          📊 Monitorar
+        </button>
+
+        <button class="btn btn-primary btn-sound" data-protected>
+          ⚡ Conectar
+        </button>
+
       </div>
+
     </div>
+
+    <!-- Conteúdo -->
     <section class="content-box">
+
       <div class="empty-state">
+
         <div class="empty-icon">◈</div>
-        <div class="empty-title">NeuraHub em Desenvolvimento</div>
-        <div class="empty-desc">Este módulo está sendo desenvolvido. Em breve estará disponível.</div>
-        <button class="btn btn-primary" style="margin-top:8px" data-protected>⚡ Em Breve</button>
+
+        <div class="empty-title">
+          NeuraHub em Desenvolvimento
+        </div>
+
+        <div class="empty-desc">
+          Este módulo está sendo desenvolvido. Em breve estará disponível.
+        </div>
+
+        <button 
+          class="btn btn-primary btn-sound"
+          style="margin-top:8px"
+          data-protected>
+          ⚡ Em Breve
+        </button>
+
       </div>
+
     </section>
+
   </main>
+
 </div>
+
 <script src="site.js"></script>
 <script src="auth.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>

@@ -8,7 +8,8 @@ const soundsubmit       = new Audio('./assets/sounds/submit.mp3');
 
 // ─── ELEMENTOS ──────────────────────────────────────────
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.btn-sound');
+const submitButton = document.querySelectorAll('.submit-btn');
 
 // ─── CONFIGURAÇÃO DOS SONS ─────────────────────────────
 
@@ -57,6 +58,15 @@ buttons.forEach(button => {
 
 });
 
+submitButton.forEach(button => {
+  
+  button.addEventListener('click', () => {
+    playSound(soundsubmit);
+  });
+  button.addEventListener('mouseenter', () => {
+    playSound(soundhover);
+});
+});
 // ─── SOM AO CARREGAR PÁGINA ─────────────────────────────
 
 window.addEventListener('load', () => {

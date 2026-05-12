@@ -5,59 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeuraCorp — Cadastro</title>
   <link rel="stylesheet" href="auth.css">
+  <link rel="icon" type="image/png" href="assets/imgs/nclogo.png">
 </head>
 <body>
+
+<!-- Card de autenticação -->
 <div class="auth-card">
+
+  <!-- Marca -->
   <div class="brand">
     <img src="assets/imgs/nclogo.png" alt="NeuraCorp" class="brand-icon">
     <div class="brand-name">Neura<span>Corp</span></div>
     <div class="brand-tag">Plataforma Corporativa</div>
   </div>
+
+  <!-- Título -->
   <h1 class="auth-title">Criar conta</h1>
-  <p class="auth-subtitle">Junte-se à NeuraCorp. É rápido e gratuito.</p>
+
+  <p class="auth-subtitle">
+    Junte-se à NeuraCorp. É rápido e gratuito.
+  </p>
+
+  <!-- Alertas -->
   <div class="alert alert-error" id="alertError">
-    <span>⚠</span><span id="alertMsg"></span>
+    <span>⚠</span>
+    <span id="alertMsg"></span>
   </div>
+
   <div class="alert alert-success" id="alertSuccess">
-    <span>✓</span><span>Conta criada! Redirecionando...</span>
+    <span>✓</span>
+    <span>Conta criada! Redirecionando...</span>
   </div>
+
+  <!-- Formulário -->
   <form id="cadastroForm" autocomplete="on">
+
+    <!-- Nome -->
     <div class="form-group">
+
       <label for="nome">Nome completo</label>
+
       <div class="input-wrap">
-        <input type="text" id="nome" placeholder="Seu nome" required autocomplete="name">
+
+        <input 
+          type="text" 
+          id="nome" 
+          placeholder="Seu nome" 
+          required 
+          autocomplete="name"
+        >
+
         <span class="icon">👤</span>
+
       </div>
+
     </div>
+
+    <!-- Email -->
     <div class="form-group">
+
       <label for="email">Email</label>
+
       <div class="input-wrap">
-        <input type="email" id="email" placeholder="seu@email.com" required autocomplete="email">
+
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="seu@email.com" 
+          required 
+          autocomplete="email"
+        >
+
         <span class="icon">✉</span>
+
       </div>
+
     </div>
+
+    <!-- Senha -->
     <div class="form-group">
+
       <label for="senha">Senha</label>
+
       <div class="input-wrap">
-        <input type="password" id="senha" placeholder="Mínimo 8 caracteres" required autocomplete="new-password">
+
+        <input 
+          type="password" 
+          id="senha" 
+          placeholder="Mínimo 8 caracteres" 
+          required 
+          autocomplete="new-password"
+        >
+
         <span class="icon">🔒</span>
-        <button type="button" class="toggle-pw" onclick="togglePw('senha', this)">👁</button>
+
+        <button 
+          type="button" 
+          class="toggle-pw btn-sound"
+          onclick="togglePw('senha', this)">
+          👁
+        </button>
+
       </div>
+
+      <!-- Barra de força -->
       <div class="strength-bar">
         <div class="strength-segment" id="s1"></div>
         <div class="strength-segment" id="s2"></div>
         <div class="strength-segment" id="s3"></div>
         <div class="strength-segment" id="s4"></div>
       </div>
+
       <div class="strength-text" id="strengthText"></div>
+
     </div>
-    <button type="submit" class="btn-primary" id="btnCadastro">Criar minha conta</button>
+
+    <!-- Botão -->
+    <button type="submit" class="btn-primary submit-btn" id="btnCadastro">
+      Criar minha conta
+    </button>
+
   </form>
+
+  <!-- Links -->
   <div class="auth-links">
     Já tem uma conta? <a href="login.html">Entrar</a>
   </div>
+
 </div>
+
 <script src="auth.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
