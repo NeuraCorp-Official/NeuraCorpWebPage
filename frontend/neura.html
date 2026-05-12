@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>NeuraCorp — Neura IA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="neura.css">
+  <link rel="icon" type="image/png" href="assets/imgs/nclogo.png">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Barra lateral -->
+  <aside class="sidebar">
+
+    <div class="sidebar-brand">
+      <img src="assets/imgs/nclogo.png" alt="NeuraCorp" class="brand-icon">
+      <div class="brand-name">Neura<span>Corp</span></div>
+      <div class="brand-tag">Inovação & Tecnologia</div>
+    </div>
+
+    <div class="sidebar-search">
+      <span class="search-icon">⌕</span>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+
+    <div class="nav-label">Navegação</div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><button class="btn-sound nav-btn"><span class="nav-icon">⌂</span> Home</button></a></li>
+        <li><a href="neurahub.html"><button class="btn-sound nav-btn"><span class="nav-icon">◈</span> NeuraHub</button></a></li>
+        <li><a href="neuralab.html"><button class="btn-sound nav-btn"><span class="nav-icon">⚗</span> NeuraLab</button></a></li>
+        <li><a href="neurashop.html"><button class="btn-sound nav-btn"><span class="nav-icon">◻</span> NeuraShop</button></a></li>
+        <li><a href="projetos.html"><button class="btn-sound nav-btn"><span class="nav-icon">◧</span> Projetos</button></a></li>
+        <li><a href="parcerias.html"><button class="btn-sound nav-btn"><span class="nav-icon">⬡</span> Parcerias</button></a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        Sistemas operacionais
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content neura-main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <span class="tag tag-cyan">Inteligência Artificial · Online</span>
+      <div id="authArea" class="btn-sound" style="display:flex;align-items:center;gap:10px;position:relative;"></div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <div class="page-header">
+      <div class="header-left">
+        <div class="page-eyebrow">Neura · IA NeuraCorp</div>
+        <h1 class="page-title">Bem-vindo à <span>Neura</span></h1>
+        <p class="page-subtitle">A IA da NeuraCorp. Estratégica, precisa e sempre evoluindo ao seu lado.</p>
+      </div>
+      <div class="header-right">
+        <div class="stat-chip" style="min-width:90px;text-align:center">
+          <div class="stat-value">∞</div>
+          <div class="stat-label">Capacidade</div>
+        </div>
+        <div class="stat-chip" style="min-width:90px;text-align:center">
+          <div class="stat-value" style="color:var(--success)">●</div>
+          <div class="stat-label">Status</div>
+        </div>
+        <div class="stat-chip" style="min-width:90px;text-align:center">
+          <div class="stat-value" id="stat-msgs">0</div>
+          <div class="stat-label">Mensagens</div>
+        </div>
+        <div class="stat-chip" style="min-width:90px;text-align:center">
+          <div class="stat-value" id="stat-sessoes">0</div>
+          <div class="stat-label">Sessões</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat layout -->
+    <div class="neura-layout">
+
+      <!-- Chat principal -->
+      <div class="neura-chat-wrap content-box" style="padding:0;display:flex;flex-direction:column;">
+
+        <!-- Header do chat -->
+        <div class="neura-chat-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="neura-avatar-icon">◎</div>
+            <div>
+              <div style="font-family:var(--font-display);font-weight:700;font-size:15px">Neura</div>
+              <div style="font-size:11px;color:var(--text-muted)">IA NeuraCorp · <span style="color:var(--success)">Online</span></div>
+            </div>
+          </div>
+          <button class="btn btn-ghost" style="font-size:12px;padding:6px 14px" onclick="limparChat()">
+            Limpar
+          </button>
+        </div>
+
+        <!-- Mensagens -->
+        <div id="chat" class="neura-messages">
+          <div class="neura-msg-system">// sistema inicializado · pronto para conversar</div>
+        </div>
+
+        <!-- Input -->
+        <div class="neura-input-area">
+          <div class="neura-input-wrap">
+            <input type="text" id="textInput" placeholder="Pergunte algo à Neura..." autocomplete="off"/>
+            <button id="btnEnviar" class="btn btn-primary" onclick="enviar()">
+              Enviar ➤
+            </button>
+          </div>
+          <p style="font-size:10px;color:var(--text-muted);text-align:right;margin-top:6px;font-family:var(--font-body)">
+            Enter para enviar · Esc para limpar
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Painel lateral -->
+      <div class="neura-side-panel">
+
+        <!-- Memórias -->
+        <div class="content-box neura-panel-box">
+          <div class="neura-panel-title">
+            <span>◈</span> MEMÓRIAS DA SESSÃO
+          </div>
+          <div id="memories-list">
+            <div class="neura-panel-empty">// nenhuma memória registrada ainda</div>
+          </div>
+        </div>
+
+        <!-- Sessões -->
+        <div class="content-box neura-panel-box">
+          <div class="neura-panel-title">
+            <span>◷</span> SESSÕES RECENTES
+          </div>
+          <div id="sessions-list">
+            <div class="neura-panel-empty">// carregando...</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="site.js"></script>
+<script src="script.js"></script>
+<script src="auth.js"></script>
+<script src="neura.js"></script>
+
+</body>
+</html>

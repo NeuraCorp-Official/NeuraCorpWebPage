@@ -5,7 +5,7 @@
  * ═══════════════════════════════════════
  */
 
-const API = 'https://neuracorpwebpage.onrender.com';
+const AUTH_API = 'https://neuracorpwebpage.onrender.com';
 
 // ─── UTILITÁRIOS ─────────────────────────────────────────────
 
@@ -82,7 +82,7 @@ async function handleLogin(e) {
   setLoading(btn, true);
 
   try {
-    const res  = await fetch(`${API}/auth/login`, {
+    const res  = await fetch(`${AUTH_API}/auth/login`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ email, senha })
@@ -130,7 +130,7 @@ async function handleCadastro(e) {
   setLoading(btn, true);
 
   try {
-    const res  = await fetch(`${API}/auth/cadastro`, {
+    const res  = await fetch(`${AUTH_API}/auth/cadastro`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ nome, email, senha })
@@ -168,7 +168,7 @@ async function handleRecuperar(e) {
   setLoading(btn, true);
 
   try {
-    await fetch(`${API}/recuperar-senha`, {
+    await fetch(`${AUTH_API}/recuperar-senha`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ email })
