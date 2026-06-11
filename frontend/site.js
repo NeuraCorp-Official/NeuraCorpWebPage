@@ -251,61 +251,140 @@ document.addEventListener('DOMContentLoaded', () => {
 function injetarBotaoNeura() {
   if (window.location.pathname.includes('neura.html')) return;
 
-  // Injeta o CSS do botão (não depende de neura-chat.css)
+  // CSS do botão
   const style = document.createElement('style');
   style.textContent = `
     #neura-float-btn {
       position: fixed;
-      bottom: 28px; right: 28px;
-      width: 52px; height: 52px;
-      background: #38bdf8;
-      border: none; border-radius: 50%;
+      bottom: 28px;
+      right: 28px;
+
+      width: 64px;
+      height: 64px;
+
+      background:
+        radial-gradient(circle at center,
+        rgba(56,189,248,0.18),
+        rgba(2,6,23,0.95));
+
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 50%;
+
       cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; color: #020913;
-      box-shadow: 0 4px 20px rgba(56,189,248,0.45);
-      animation: floatPulse 3s ease-in-out infinite;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 0 18px rgba(56,189,248,0.45),
+        0 0 35px rgba(168,85,247,0.25);
+
+      animation: neuraPulse 3s ease-in-out infinite;
+
       z-index: 9999;
+
       transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
       text-decoration: none;
+      overflow: hidden;
     }
+
     #neura-float-btn:hover {
-      transform: scale(1.12);
-      box-shadow: 0 6px 28px rgba(56,189,248,0.65);
+      transform: scale(1.08) rotate(4deg);
+
+      box-shadow:
+        0 0 24px rgba(56,189,248,0.75),
+        0 0 42px rgba(168,85,247,0.45);
     }
+
+    #neura-float-btn img {
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 0 8px rgba(56,189,248,0.7))
+        drop-shadow(0 0 14px rgba(168,85,247,0.45));
+    }
+
     #neura-float-tooltip {
       position: fixed;
-      bottom: 90px; right: 28px;
-      background: #0b1a30;
-      border: 1px solid #38bdf8;
-      border-radius: 10px;
-      padding: 7px 14px;
-      font-size: 12px; color: #38bdf8;
-      font-weight: 600; letter-spacing: 0.5px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.2s;
-      z-index: 9998; white-space: nowrap;
+      bottom: 102px;
+      right: 30px;
+
+      background: rgba(8,15,30,0.95);
+
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 12px;
+
+      padding: 8px 14px;
+
+      font-size: 12px;
+      color: #7dd3fc;
+
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity 0.25s ease;
+
+      z-index: 9998;
+      white-space: nowrap;
+
+      box-shadow:
+        0 0 16px rgba(56,189,248,0.2);
     }
-    #neura-float-tooltip.visible { opacity: 1; }
-    @keyframes floatPulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(56,189,248,0.45), 0 0 0 0 rgba(56,189,248,0.3); }
-      50%       { box-shadow: 0 4px 20px rgba(56,189,248,0.45), 0 0 0 8px rgba(56,189,248,0); }
+
+    #neura-float-tooltip.visible {
+      opacity: 1;
+    }
+
+    @keyframes neuraPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 18px rgba(56,189,248,0.45),
+          0 0 35px rgba(168,85,247,0.20),
+          0 0 0 0 rgba(56,189,248,0.35);
+      }
+
+      50% {
+        box-shadow:
+          0 0 28px rgba(56,189,248,0.65),
+          0 0 45px rgba(168,85,247,0.35),
+          0 0 0 12px rgba(56,189,248,0);
+      }
     }
   `;
+
   document.head.appendChild(style);
 
+  // BOTÃO
   const btn = document.createElement('a');
-  btn.id        = 'neura-float-btn';
-  btn.href      = 'neura.html';
-  btn.title     = 'Falar com a Neura';
-  btn.innerHTML = '◎';
+  btn.id = 'neura-float-btn';
+  btn.href = 'neura.html';
+  btn.title = 'Falar com a Neura';
 
+  // LOGO
+  btn.innerHTML = `
+    <img src="assets/imgs/Neuralogo.png" alt="Neura IA Logo">
+  `;
+
+  // TOOLTIP
   const tooltip = document.createElement('div');
-  tooltip.id          = 'neura-float-tooltip';
+  tooltip.id = 'neura-float-tooltip';
   tooltip.textContent = 'Falar com a Neura';
 
-  btn.addEventListener('mouseenter', () => tooltip.classList.add('visible'));
-  btn.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
+  btn.addEventListener('mouseenter', () => {
+    tooltip.classList.add('visible');
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    tooltip.classList.remove('visible');
+  });
 
   document.body.appendChild(btn);
   document.body.appendChild(tooltip);
